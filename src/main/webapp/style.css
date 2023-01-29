@@ -4,8 +4,8 @@
   box-sizing:border-box;
   }
   body{
-    background-image: url('http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg');
-    
+   background-image:  url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+   
   }
   /* Container*/
   .container{
@@ -38,7 +38,7 @@
   padding:12px;
   width:65%;
   margin:15px;
-  border:1px solid black;
+  border:2px solid black;
   outline:none;
   border-radius:20px;
   }

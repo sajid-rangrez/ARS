@@ -1,0 +1,224 @@
+body{
+    background-color:#ded4d4;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+
+  margin: 0;
+}
+
+
+.topnav{
+  background-color:#222;
+  overflow: hidden;
+  box-shadow: #000;
+}
+
+.topnav a{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+} 
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.topnav a.active{
+  background-color: #ff1500;
+  color: #f2f2f2;
+}
+
+.topnav .icon{
+  display: none;
+}
+
+@media screen and (max-width: 600px)
+{
+  .topnav a:not(:first-child){
+    display: none;
+  }
+  .topnav a.icon{
+    float: right;
+    display: block;
+    color: #ddd;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color:#04AA6D ;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absoute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+.title{
+    width: 90%;
+    color: #fff;
+    position: relative;
+    text-align: left;
+    top:70px;
+    left:5%; 
+  }
+  
+  .title h1{
+    font-size: 50px;
+    font-family: Lucida Bright;
+    color:white;
+  }
+  
+  .title h2{
+    font-family: Lucida Fax;
+    font-size: 40px;
+    color: #38caff;
+  }
+  
+  .main-button{
+    position: relative;
+    top: 70px;
+    margin-top:20px;
+    margin-left: 70px;
+    text-decoration: none;
+  }
+  
+  #contact-btn{
+    display: inline-block;
+    color: #fff;
+    border: 2px solid #ff6600;
+    position: relative;
+    cursor: pointer;
+    padding: 12px 30px;
+    background-color: #ff1500;
+  }
+  
+  #about-btn{
+    color: #000;
+    border: 2px solid #ff6600;
+    padding: 12px 30px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    
+  }
+    
+  .searchbox{
+          width: 80%;
+          margin-bottom: 5px;
+          top: 150px;
+          left: 10%;
+          right: 10%;
+          padding-bottom: 30px;
+          bottom: 0;
+          align-items: center;
+          background:#222;
+          display: flex;
+          position: relative;
+          justify-content: center;
+          
+          box-shadow:0 0px 5px rgba(0,0,0,0.1) ;
+          border-radius:10px;
+          
+        }
+        
+        @media screen and (max-width: 600px){
+          .searchbox{
+            margin-bottom: 5px;
+          top: -20px;
+          left: 10%;
+          right: 10%;
+          padding-bottom: 50px;
+          padding-left: 15px;
+            max-width: 300px;
+            position: relative;
+            justify-content: center;
+
+          }
+          .main-button{
+            position: relative;
+            top: 550px;
+            margin-top:20px;
+            margin-left: 70px;
+            text-decoration: none;
+          }
+          .title{
+            width: 90%;
+            color: #fff;
+            position: relative;
+            text-align: left;
+            top:20px;
+            left:5%; 
+          }
+
+}
+
+     
+     .searchbox .inputBox{
+          margin: 0 15px;
+  }
+      
+      .searchbox .inputBox p{
+          color:rgb(255, 255, 255);
+          margin-bottom: 8px;
+      }
+     
+      .searchbox .inputBox input{
+        vertical-align: middle;
+        
+          outline: none;
+          padding:9px;
+          max-width: 100%;
+          min-width: 20px;
+          width: auto;
+          font-size: 1.1em;
+          border:2px solid #ff6600;
+          outline:none;
+          color: rgb(118, 116, 116);
+          background: transparent;
+          border-radius:20px;
+          overflow: hidden;
+      }
+      .searchbox .inputBox .passengers{
+        width: 100px;
+        background: transparent;
+        
+    }
+
+      .searchbox .inputBox input[type="submit"]
+      {
+        margin-bottom: -25px;
+        left: 0px;
+          outline:none;
+          border: none;
+          background: #ff1500;
+          color:white;
+          cursor: pointer;
+          letter-spacing: 2px;
+          padding: 10px;
+  }
+  @media (max-width: 1000px) {
+    .searchbox {
+      margin: 10px 0;
+    }
+  
+    .searchbox {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+

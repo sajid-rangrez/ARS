@@ -1,15 +1,33 @@
+<%@ page import="com.project.programs.*" %>
+
 <html>
   <head>
   <title> Home Page </title>
-  <link rel="stylesheet" href="HomePage.css">
+  <link rel="stylesheet" href="CssFiles/HomePage.css">
   </head>
 <body>
 <div class="topnav" id="myTopnav">
-
-	<a href="login.jsp" class="active">Login</a></li> 
+<%!
+	public String link(){
+	if(User.FName == null){
+		return "login.jsp";
+	}
+	else{
+		return "UserProfile.jsp";
+	}
+}
+%>
+	<a href="<%= link() %>" class="active"><%
+	if(User.FName == null){
+		out.print("Login");
+	}
+	else{
+		out.print(User.FName);
+	}
+	%></a></li> 
 	<a href="#">Services</a></li>  
    <a href="AboutUs.html">About Us</a></li>
-   <a href="ContactUs.html">Contact Us</a></li>
+   <a href="ContactUs.jsp">Contact Us</a></li>
    
    <img src="https://w7.pngwing.com/pngs/657/810/png-transparent-social-media-linkedin-business-organization-company-plane-angle-company-logo-thumbnail.png" height="50" width="50">
     

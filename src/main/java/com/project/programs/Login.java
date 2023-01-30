@@ -56,11 +56,24 @@ public class Login extends HttpServlet {
 			   pstat.setString(2, password);
 			   result = pstat.executeQuery();
 			   if(result.next() == true ) {
-				   out.println("<h3>Welcome " + result.getString(1) + "!</h3>");
+				   
+				   
+				   User.FName = result.getString(1);
+				   User.LName = result.getString(2);
+				   User.Dob = result.getString(3);
+				   User.Age = result.getInt(4);
+				   User.Mob = result.getString(5);
+				   User.Gender = result.getString(7);
+				   User.Email = result.getString(8);
+				   
+				   
+				   
+				   req.getRequestDispatcher("HomePage.jsp").include(req, resp);
 				   System.out.println("Login Successfully");
 			   }
 			   else {
 				   out.println("<h3>Invalid login details. Please try again!</h3>");
+				   req.getRequestDispatcher("login.jsp").include(req, resp);
 				   System.out.println(email);
 				   System.out.println(password);
 			   }

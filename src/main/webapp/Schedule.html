@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Schedule Form</title>
+</head>
+<body>
+    <div class="form">
+        <div class="register">
+            <h2>Flight Schedule:</h2>
+            <form id="schedule" action="AddFlight">
+                
+                <label>Departure:</label>
+                <br>
+                <input type="text" name="Departure" placeholder="Enter Departure ">
+                <br><br>
+                <label>Destination:</label>
+                <br>
+                <input type="text" name="Destination" placeholder="Enter Destination">
+                <br><br>
+                <label> Flight Date/time:</label>
+                <br>
+                <input type="time" name="Flight_Time" placeholder="date of arrival">
+                <br><br>
+                <label>Landing Date/time:</label>
+                <br>
+                <input type="time" name="Landing_Time" placeholder="date of departure">
+                <br><br>
+                <label>Distance:</label>
+                <br>
+                <input type="text" name="Distance" placeholder="Km">
+                <br><br>
+                <label>Flight Duration:</label>
+                <br>
+                <input type="text" name="Flight_Duration" placeholder="Duration">
+                <br><br>
+                
+                <label>Flight Number:</label>
+                <br>
+                <input type="text" name="Flight_Number"  placeholder="Flight number">
+                <br><br>
+                
+                <label>Flight Model:</label>
+                <br>
+                <input type="text" name="Plane_Model" placeholder="model name">
+                <br><br>
+                
+                
+
+                <label>.Economy class</label>
+                <br>
+                <input type="text" name="E_Price"  >
+                <br>
+                
+                
+                <label>.Business class</label>
+                <br>
+                <input type="text" name="B_Price" >
+                <br>
+                
+                
+                <label>.Premium class</label>
+                <br>
+                <input type="text" name="PE_Price" >
+                <br>
+                
+                
+                <label>.First-class seats</label>
+                <br>
+                <input type="text" name="FC_Price" >
+             
+                <br>
+                
+                
+                <label>Days Of flights:</label> 
+                <br>
+                mon<input type="checkbox" name="Mon">
+                tue<input type="checkbox" name="Tue">
+                wed<input type="checkbox" name="Wed">
+                thu<input type="checkbox" name="Thu">
+                fri<input type="checkbox" name="Fri">
+                sat<input type="checkbox" name="Sat">
+                sun<input type="checkbox" name="Sun">
+                <br><br>
+                <input type = "submit" value="Add" id="submit">
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

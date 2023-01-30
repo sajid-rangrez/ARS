@@ -10,6 +10,7 @@ body{
   background-color:#222;
   overflow: hidden;
   box-shadow: #000;
+  
 }
 
 .topnav a{
@@ -20,6 +21,7 @@ body{
   padding: 20px 16px;
   text-decoration: none;
   font-size: 17px;
+  
 } 
 
 .topnav a:hover {

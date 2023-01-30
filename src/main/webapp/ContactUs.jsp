@@ -1,4 +1,4 @@
-<%@ page import="com.project.programs.*" %>
+<%@ page import="com.project.programs.User" %>
 <html lang="en">
 
 <head>
@@ -8,7 +8,7 @@
     <title>CONTACT US</title>
     <link rel="stylesheet" href="CssFiles/ContactUs.css">
     
-    <script src="https://kit.fontawesome.com/c89de0c309.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c89de0c309.js" ></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
    <a href="AboutUs.html">About Us</a></li>
    <a href="ContactUs.html">Contact Us</a></li>
    
-   <img src="https://w7.pngwing.com/pngs/657/810/png-transparent-social-media-linkedin-business-organization-company-plane-angle-company-logo-thumbnail.png" height="50" width="50">
+   <img src="images/Logo.png" height="50" width="50" Style="margin-left:10px; margin-top:5px;">
     
    
 </div>

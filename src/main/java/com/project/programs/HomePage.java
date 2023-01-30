@@ -15,8 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SearchFlights")
 public class HomePage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
+
+	/** xa      bp   ;;
+	 * Get data from Search Fields of HomePage
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String FromCity = request.getParameter("FromCity");
 		String ToCity = request.getParameter("ToCity");

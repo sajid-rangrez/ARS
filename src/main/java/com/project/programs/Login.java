@@ -34,10 +34,7 @@ public class Login extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-  
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-	}
+
 
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,7 +44,10 @@ public class Login extends HttpServlet {
 		
 		String email = req.getParameter("email");
 		   String password = req.getParameter("password");
-		   
+
+
+
+// 	Validating login data
 		   try {
 			   String query = "select * from user WHERE email = ? AND Password = ?";
 //			   con = DriverManager.getConnection(url, user, pwd);
@@ -57,7 +57,8 @@ public class Login extends HttpServlet {
 			   result = pstat.executeQuery();
 			   if(result.next() == true ) {
 				   
-				   
+//	Setting Requesting User's data from Database
+
 				   User.FName = result.getString(1);
 				   User.LName = result.getString(2);
 				   User.Dob = result.getString(3);
@@ -67,7 +68,8 @@ public class Login extends HttpServlet {
 				   User.Email = result.getString(8);
 				   
 				   
-				   
+//	Request Dispeture With Include
+
 				   req.getRequestDispatcher("HomePage.jsp").include(req, resp);
 				   System.out.println("Login Successfully");
 			   }

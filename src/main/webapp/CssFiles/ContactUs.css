@@ -71,7 +71,8 @@
 
 
 body{
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+  
 }
         .hero {
             width: 100%;

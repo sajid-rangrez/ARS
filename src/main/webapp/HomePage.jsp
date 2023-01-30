@@ -1,4 +1,4 @@
-<%@ page import="com.project.programs.*" %>
+<%@ page import="com.project.programs.User" %>
 
 <html>
   <head>
@@ -29,7 +29,7 @@
    <a href="AboutUs.html">About Us</a></li>
    <a href="ContactUs.jsp">Contact Us</a></li>
    
-   <img src="https://w7.pngwing.com/pngs/657/810/png-transparent-social-media-linkedin-business-organization-company-plane-angle-company-logo-thumbnail.png" height="50" width="50">
+   <img src="images/Logo.png" height="50" width="50" Style="margin-left:10px; margin-top:5px;">
     
    
 </div>
@@ -45,7 +45,7 @@
 </h2>
 </div> 
 <div class="main-button">
-<a id="contact-btn" href="ContactUs.html"><b>Contact us</b></a> &nbsp;&nbsp;&nbsp;
+<a id="contact-btn" href="ContactUs.jsp"><b>Contact us</b></a> &nbsp;&nbsp;&nbsp;
 <a id="about-btn" href="AboutUs.html"><b>About us</b></a>
 </div>
 <form class="searchbox" action="SearchFlights" method="get">
@@ -68,7 +68,7 @@
            </div>
            <div class="inputBox">
               <p>PASSENGERS</p>
-              <input type="text" name="NPass" class="passengers" placeholder="No.">
+              <input type="Number" min="1" max="5" name="NPass" class="passengers" placeholder="No.">
            </div>
            <div class="inputBox">
             <p class="white"> </p>

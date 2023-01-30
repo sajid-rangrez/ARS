@@ -1,13 +1,13 @@
 package com.project.programs;
 
 public class User {
-	public static String FName ;
-	public static String LName;
-	public static String Dob;
-	public static String Mob;
-	public static String Email;
-	public static String Gender;
-	public static int Age;
+	public static String FName = null ;
+	public static String LName = null;
+	public static String Dob = null;
+	public static String Mob = null;
+	public static String Email = null;
+	public static String Gender = null;
+	public static int Age = 0;
 	
 	
 

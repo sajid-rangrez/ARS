@@ -64,7 +64,7 @@
                     <TEXTAREA id="message" rows="8" required></TEXTAREA>
                     <label for="message"><i class="fas fa-comments"></i> YOUR MESSAGE</label>
                 </div>
-                <button type="submit" id="submit">SUBMIT<i class="fas fa-paper-plane"></i> </button>
+                <button type="submit" id="submit">Contact Us <i class="fas fa-paper-plane"></i> </button>
             </form>
 
         </div>

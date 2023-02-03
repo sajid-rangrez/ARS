@@ -5,7 +5,7 @@
   <title> Home Page </title>
   <link rel="stylesheet" href="CssFiles/HomePage.css">
   </head>
-<body>
+<body> 
 <div class="topnav" id="myTopnav">
 <%!
 	public String link(){
@@ -48,7 +48,7 @@
 <a id="contact-btn" href="ContactUs.jsp"><b>Contact us</b></a> &nbsp;&nbsp;&nbsp;
 <a id="about-btn" href="AboutUs.html"><b>About us</b></a>
 </div>
-<form class="searchbox" action="SearchFlights" method="get">
+<form class="searchbox" action="SearchFlight" method="get">
            <div class="inputBox">
             
               <p>FROM</p>

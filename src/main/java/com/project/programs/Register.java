@@ -80,7 +80,7 @@ public class Register extends HttpServlet {
 		
 		
 		
-		 
+			response.setContentType("text/html");
 			 PrintWriter out = response.getWriter();
 			 PreparedStatement stmt = con.prepareStatement(QUERY);
 	         
@@ -97,15 +97,16 @@ public class Register extends HttpServlet {
 				 
 				 stmt.executeUpdate();
 				 System.out.println("Registered Successfully");
-				 out.println(fname + " You have Registered Successfully");
+				 
+				 out.println(fname + "<h5> You have Registered Successfully</h5>");
+				 request.getRequestDispatcher("login.jsp").include(request, response);
 			 }
 			 else {
-				 out.println("Password doesn't match! Try Again...");
-				 RequestDispatcher rd = request.getRequestDispatcher("/register.html");
-				 out.println("Registeration Unuccessfull");
+				 out.println("<h5>Password doesn't match! Try Again...</h5>");
+				 request.getRequestDispatcher("register.jsp").include(request, response);
 				 System.out.println("Registeration Unuccessfull");
 				 
-				 rd.forward(request, response);
+				 
 				 
 			 }
 	         

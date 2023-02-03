@@ -1,86 +1,164 @@
-*{
-    margin: 0;
-    padding:0;
-}
-body{
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+  box-sizing: border-box;
 
 }
-div.main{
-    width:500px;
-    margin:100px auto 0px auto;
+
+.hero {
+  width: 100%;
+  height: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+  
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.container {
+  background-color: #222;
+  width: 600px;
+  height: 560px;
+  font-size: 18px;
+  border-radius: 0px;
+ 
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 20px;
+  padding: 40px;
+
+}
+
+.hero#container {
+  margin: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
+
+
+.form {
+  width: 90%;
+  max-width: 600px;
 
 }
 h2{
-    text-align:center;
-    padding:20px;
-    font-family:sans-serif;
-    font-size:200%;
+  margin-top: -25px;
+  margin-bottom: 20px;
+  text-align:center;
+  padding:20px;
+  font-family:sans-serif;
+  font-size:200%;
 
 }
-div.register{
-    background-color:whitesmoke;
-    width:780px;
-    height: 650px;
-    font-size:18px;
-    border-radius:0px;
-    border:1px solid white;
-    box-shadow:2px 2px 15px
-    rgba(0,0,0,0.3);
-    color:black;
-    margin:auto;
-    margin-top: 50px;
-    
+
+.input-group {
+  margin-bottom: 30px;
+  position: relative;
 }
-form#register{
-    margin:40px;
-   
-}
-div.inputs{
-    display:flex;
-    justify-content:space-between;
-    flex-direction:row;
-    flex-wrap:wrap;
-}
-label{
-    font-family:sans-serif;
-    font-size:18px;
-    font-style:normal;
-}
-input#name{
-    padding:12px;
-    width:300px;
-    margin:15px;
-    margin-left: -3px;
-    border:1px solid black;
-    outline:none;
-    border-radius:20px;
-}
-#submit{
-    padding:12px 30px;
-    width:40%;
-    margin-top:30px;
-    margin-bottom: 10px;
-    
-    background-color:black;
-    color:white;
-    font-weight:bolder;
-    border:none;
-    outline:none;
-    border-radius:20px;
-    
-    
+
+input {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #ff1500;
+  color: #fff;
+  background: transparent;
+  font-size: 15px;
+  background-color: #222;
+  border-radius: 20px;
 
 }
-#submit:hover{
-    cursor:pointer;
-    background-color:rgba(0, 162, 255, 0.507);
-  }
-.center{
-    display: flex;  
-justify-content: center;  
-align-items: center;  
+
+.input {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: #fff;
+  cursor: text;
+  transition: 0.2s;
 }
- label,span,h2{
-    text-shadow:1px 1px 5px rgba(0,0,0,0.3);
- }
+
+button {
+  padding: 10px 0;
+  color: #fff;
+  outline: none;
+  background: transparent;
+  border: 1px solid #ff6600;
+  width: 100%;
+  cursor: pointer;
+  background-color: #ff1500;
+}
+
+input:focus~.input,
+input:valid~.input {
+  top: -35px;
+  font-size: 14px;
+}
+
+.row {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row .input-group {
+  flex-basis: 48%;
+}
+
+#submit {
+  padding: 12px 30px;
+  width: 40%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  background-color: #ff1500;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+
+
+
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: rgba(0, 162, 255, 0.507);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label .input,
+span,
+h2 {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.gender{
+  margin-top: -15px;
+  display:flex;
+  justify-content: left;
+  padding:0%;
+  width: 50%;
+  size: 50%;;
+}
+input[type='radio']{
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}

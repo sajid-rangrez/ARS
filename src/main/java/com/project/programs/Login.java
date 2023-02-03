@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -58,6 +59,10 @@ public class Login extends HttpServlet {
 			   if(result.next() == true ) {
 				   
 //	Setting Requesting User's data from Database
+				   
+				   Cookie cookie = new Cookie(result.getString(1), result.getString(8));
+				   cookie.setMaxAge(900);
+				   resp.addCookie(cookie);
 
 				   User.FName = result.getString(1);
 				   User.LName = result.getString(2);

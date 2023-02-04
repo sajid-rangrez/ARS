@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class readCookie
  */
 @WebServlet("/readCookie")
-public class readCookie extends HttpServlet {
+public class ReadCookie extends HttpServlet {
+	public static String Name = null;
+	public static String Value = null;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] ck = request.getCookies();
-		String Name = ck[0].getName();
-		String Value = ck[0].getValue();
+		Name = ck[1].getValue();
+		Value = ck[2].getValue();
 		PrintWriter out = response.getWriter();
-		out.println(Name);
-		out.println(Value);
-		
+		response.sendRedirect("HomePage.jsp");
 	}
 
 	

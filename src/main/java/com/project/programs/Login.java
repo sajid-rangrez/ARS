@@ -60,22 +60,26 @@ public class Login extends HttpServlet {
 				   
 //	Setting Requesting User's data from Database
 				   
-				   Cookie cookie = new Cookie(result.getString(1), result.getString(8));
-				   cookie.setMaxAge(900);
-				   resp.addCookie(cookie);
+				   Cookie ck1 = new Cookie("Name" , result.getString(1));
+				   Cookie ck2 = new Cookie("Email" , result.getString(8));
+				   ck1.setMaxAge(-1);
+				   ck2.setMaxAge(-1);
+				   resp.addCookie(ck1);
+				   resp.addCookie(ck2);
 
-				   User.FName = result.getString(1);
-				   User.LName = result.getString(2);
-				   User.Dob = result.getString(3);
-				   User.Age = result.getInt(4);
-				   User.Mob = result.getString(5);
-				   User.Gender = result.getString(7);
-				   User.Email = result.getString(8);
+//				   User.FName = result.getString(1);
+//				   User.LName = result.getString(2);
+//				   User.Dob = result.getString(3);
+//				   User.Age = result.getInt(4);
+//				   User.Mob = result.getString(5);
+//				   User.Gender = result.getString(7);
+//				   User.Email = result.getString(8);
 				   
 				   
 //	Request Dispeture With Include
 
-				   req.getRequestDispatcher("HomePage.jsp").include(req, resp);
+//				   req.getRequestDispatcher("/HomePage.jsp").forward(req, resp);
+				   resp.sendRedirect("readCookie");
 				   System.out.println("Login Successfully");
 			   }
 			   else {

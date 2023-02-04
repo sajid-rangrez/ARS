@@ -1,4 +1,5 @@
 <%@ page import="com.project.programs.User" %>
+<%@ page import="com.project.programs.ReadCookie" %>
 
 <html>
   <head>
@@ -9,7 +10,7 @@
 <div class="topnav" id="myTopnav">
 <%!
 	public String link(){
-	if(User.FName == null){
+	if(ReadCookie.Name == null){
 		return "login.jsp";
 	}
 	else{
@@ -18,11 +19,11 @@
 }
 %>
 	<a href="<%= link() %>" class="active"><%
-	if(User.FName == null){
+	if(ReadCookie.Name == null){
 		out.print("Login");
 	}
 	else{
-		out.print(User.FName);
+		out.print(ReadCookie.Name);
 	}
 	%></a></li> 
 	<a href="#">Services</a></li>  

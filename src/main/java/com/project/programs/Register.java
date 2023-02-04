@@ -23,7 +23,7 @@ public class Register extends HttpServlet {
 	   String url = "jdbc:mysql://localhost:3306/ARS";
 	   String user = "root";
 	   String pwd = "root";
-	   private static final String  QUERY = "INSERT into `USER` (`First_name`, `Last_name`, `DOB`,`Age`, `Mobile`, `Password`, `Gender`, `email`) values (?,?,?,?,?,?,?,?)"; 
+	   private static final String  QUERY = "INSERT into `USER` (`First_name`, `Last_name`, `DOB`,`Age`, `Mobile`, `Password`, `Gender`, `email`,`Access`) values (?,?,?,?,?,?,?,?,?)"; 
 	   
 	   
 	   static void close() throws SQLException, IOException {
@@ -77,6 +77,7 @@ public class Register extends HttpServlet {
 		String cpassword = request.getParameter("co-password");
 		String gender = request.getParameter("gender");
 	
+	
 		
 		
 		
@@ -94,6 +95,7 @@ public class Register extends HttpServlet {
 				 stmt.setString(6, password);
 				 stmt.setString(7,gender);
 				 stmt.setString(8,email);
+				 stmt.setString(9,"USER");
 				 
 				 stmt.executeUpdate();
 				 System.out.println("Registered Successfully");

@@ -62,10 +62,13 @@ public class Login extends HttpServlet {
 				   
 				   Cookie ck1 = new Cookie("Name" , result.getString(1));
 				   Cookie ck2 = new Cookie("Email" , result.getString(8));
+				   Cookie ck3 = new Cookie("Access" , result.getString(9));
 				   ck1.setMaxAge(-1);
 				   ck2.setMaxAge(-1);
+				   ck3.setMaxAge(-1);
 				   resp.addCookie(ck1);
 				   resp.addCookie(ck2);
+				   resp.addCookie(ck3);
 
 //				   User.FName = result.getString(1);
 //				   User.LName = result.getString(2);

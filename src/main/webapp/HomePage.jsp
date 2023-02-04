@@ -26,7 +26,7 @@
 		out.print(ReadCookie.Name);
 	}
 	%></a></li> 
-	<a href="#">Services</a></li>  
+   <a href="#">Your Bookings</a></li>
    <a href="AboutUs.html">About Us</a></li>
    <a href="ContactUs.jsp">Contact Us</a></li>
    

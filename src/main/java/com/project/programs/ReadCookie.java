@@ -17,12 +17,17 @@ import javax.servlet.http.HttpServletResponse;
 public class ReadCookie extends HttpServlet {
 	public static String Name = null;
 	public static String Value = null;
+	public static String Access = null;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] ck = request.getCookies();
 		Name = ck[1].getValue();
 		Value = ck[2].getValue();
+		Access = ck[3].getValue();
 		PrintWriter out = response.getWriter();
+		System.out.println(Name);
+		System.out.println(Value);
+		System.out.println(Access);
 		response.sendRedirect("HomePage.jsp");
 	}
 

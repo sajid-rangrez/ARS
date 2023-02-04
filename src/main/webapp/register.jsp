@@ -15,7 +15,7 @@
     <div class="hero">
         <div class="container">
             <form action="registeruser" method="post">
-                <h2>Register</h2>
+                <h2>Create Account</h2>
                 <div class="row">
                     <div class="input-group">
                         <input type="text" name="fname" id="name"  required>
@@ -65,10 +65,10 @@
                     <span id="female">  Female</span>
                 </div>
                 <div class="center">
-                    <input type="submit" value="Register" id="submit">
+                    <input type="submit" value="Create" id="submit">
                 </div>
                 <div class="center" style="font-size: 15px;">
-                    <a href="login.jsp">Login here</a>
+                    <p>Already have an Account?  - <a href="login.jsp">Login here</a></p>
                 </div>
             </form>
 

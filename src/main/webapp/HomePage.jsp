@@ -53,15 +53,15 @@
            <div class="inputBox">
             
               <p>FROM</p>
-              <input type="text" name="FromCity" placeholder="Search City">
+              <input type="text" name="FromCity" placeholder="Search City" required>
            </div>
            <div class="inputBox">
               <p>TO</p>
-              <input type="text" name="ToCity" placeholder="Search City" >
+              <input type="text" name="ToCity" placeholder="Search City" required>
            </div>
            <div class="inputBox">
               <p>DEPARTURE</p>  
-              <input type="date" name="DDate" placeholder="Select Date">
+              <input type="date" name="DDate" placeholder="Select Date" required>
            </div>
            <div class="inputBox">
               <p>RETURN</p>
@@ -69,7 +69,7 @@
            </div>
            <div class="inputBox">
               <p>PASSENGERS</p>
-              <input type="Number" min="1" max="5" name="NPass" class="passengers" placeholder="No.">
+              <input type="Number" min="1" max="5" name="NPass" class="passengers" placeholder="No." required>
            </div>
            <div class="inputBox">
             <p class="white"> </p>

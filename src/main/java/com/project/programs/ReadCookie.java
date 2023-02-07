@@ -24,7 +24,7 @@ public class ReadCookie extends HttpServlet {
 		Name = ck[1].getValue();
 		Value = ck[2].getValue();
 		Access = ck[3].getValue();
-		PrintWriter out = response.getWriter();
+		
 		System.out.println(Name);
 		System.out.println(Value);
 		System.out.println(Access);

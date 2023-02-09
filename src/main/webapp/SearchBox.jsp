@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.time.LocalDate" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SearchBox</title>
+<link rel="stylesheet" href="CssFiles/HomePage.css">
+</head>
+<body>
+<form class="searchbox" action="SearchFlight" method="get">
+           <div class="inputBox">
+            
+              <p>FROM</p>
+              <input type="text" name="FromCity" placeholder="Search City" required>
+           </div>
+           <div class="inputBox">
+              <p>TO</p>
+              <input type="text" name="ToCity" placeholder="Search City" required>
+           </div>
+           <div class="inputBox">
+              <p>DEPARTURE</p>  
+              <input type="date" class="date" name="DDate" placeholder="Select Date" min="<%= LocalDate.now() %>" required>
+           </div>
+           <div class="inputBox">
+              <p>RETURN</p>
+              <input type="date" class="date"  min="<%= LocalDate.now() %> name="RDate">
+           </div>
+           <div class="inputBox">
+               <p for="Class">Class:</p>
+            <select name="Class" id="cars">
+              <option value="Economy">Economy</option>
+              <option value="Bussiness">Bussiness</option>
+              <option value="Premium">Premium </option>
+              <option value="First-Class">First-Class</option>
+            </select>
+           </div>
+           <div class="inputBox">
+            <p class="white"> </p>
+            <input type="submit" value="   Search   ">
+         </div>
+        </form>
+</body>
+</html>

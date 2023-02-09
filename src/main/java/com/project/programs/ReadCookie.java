@@ -28,7 +28,7 @@ public class ReadCookie extends HttpServlet {
 		System.out.println(Name);
 		System.out.println(Value);
 		System.out.println(Access);
-		response.sendRedirect("HomePage.jsp");
+		response.sendRedirect("Home");
 	}
 
 	

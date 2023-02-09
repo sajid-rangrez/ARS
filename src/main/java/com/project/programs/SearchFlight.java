@@ -6,6 +6,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.ParseException;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,28 +48,67 @@ public class SearchFlight extends HttpServlet {
 		String To = req.getParameter("ToCity");
 		String Departure = req.getParameter("DDate");
 		String Return = req.getParameter("RDate");
-		String Npass = req.getParameter("NPass");
+		String Class = req.getParameter("Class");
+		String Day = null;
+		String Query = null;
+		int Price = 0;
+		
 		
 		PrintWriter out = resp.getWriter();
+		resp.setContentType("text/html");
 		
+		Day = getDay(Departure);
+		if(Return != null) {
+			String Rday = getDay(Return);
+		}
 		try {
-			String Query = "select * from flights where Departure = ? AND Destination = ?";
+			if(Day.equals("MON")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  Mon = 'TRUE' ";
+			}
+			else if(Day.equals("TUE")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  TUE = 'TRUE' ";
+			} else if(Day.equals("WED")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  WED = 'TRUE' ";
+			} else if(Day.equals("THU")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  THU = 'TRUE' ";
+			} else if(Day.equals("FRI")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  FRI = 'TRUE' ";
+			} else if(Day.equals("SAT")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  SAT = 'TRUE' ";
+			} else if(Day.equals("SUN")) {
+				Query = "select * from flights where Departure = ? AND Destination = ? AND  SUN = 'TRUE' ";
+			}
 			
 			pstat = con.prepareStatement(Query);
 			pstat.setString(1, From);
 			pstat.setString(2, To);
-			result = pstat.executeQuery();
-//			if(result.next() == true) {
-				while(result.next()) {
-				System.out.println(result.getString(1)+" "+ result.getString(2)+" "+ result.getString(3)+" "+ result.getString(4) +" "+  result.getString(5)+" "+ result.getString(6)+" "+ result.getString(7)+" "+ result.getString(8)+" "+ result.getString(9)+" "+ result.getString(10)+" "+ result.getString(11)+" "+ result.getString(12)+" "+ result.getString(13)+" "+ result.getString(14)+" "+ result.getString(15)+" "+ result.getString(16)+" "+ result.getString(17)+" "+ result.getString(18) +" "+ result.getString(19));
-				out.println(result.getString(1)+" "+ result.getString(2)+" "+ result.getString(3)+" "+ result.getString(4)+" "+  result.getString(5)+" "+ result.getString(6)+" "+ result.getString(7)+" "+ result.getString(8)+" "+ result.getString(9)+" "+ result.getString(10)+" "+ result.getString(11)+" "+ result.getString(12)+" "+ result.getString(13)+" "+ result.getString(14)+" "+ result.getString(15)+" "+ result.getString(16)+" "+ result.getString(17)+" "+ result.getString(18) +" "+ result.getString(19));
 			
-//				}
-			}
-//			else {
-//				out.println("flight not Found");
-//				
-//			}
+			
+			result = pstat.executeQuery();
+			
+			req.getRequestDispatcher("NavBar.jsp").include(req, resp);
+			System.out.println(Day);
+			
+			while(result.next()) {
+				if(Class.equals("Economy")) {
+					Price = result.getInt(9);
+				}
+				else if(Class.equals("Bussiness")) {
+					Price = result.getInt(10);
+				}
+				else if(Class.equals("Premium")) {
+					Price = result.getInt(11);
+				}
+				else if(Class.equals("First-Class")) {
+					Price = result.getInt(12);
+				}
+				out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(7)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button  type=\"button\">Book</button> </container> </box>");
+				System.out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(7)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">5000</price> <button  type=\"button\">Book</button> </container> </box>");
+
+				
+				out.println("<br>");
+				}
+
 			
 		}
 		catch(Exception e){
@@ -75,6 +118,40 @@ public class SearchFlight extends HttpServlet {
 		
 		
 	}
+	private static String getDay(String Date) {
+		try {
+		      java.util.Date date = new SimpleDateFormat("yyyy-MM-dd").parse(Date);
+		      Calendar calendar = Calendar.getInstance();
+		      calendar.setTime(date);
+		      int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+		      
+//Day will return the day name of the week... 
+		      return getDayOfWeek(dayOfWeek);
+		    } catch (ParseException e) {
+		      System.out.println("Error parsing the input date: " + Date);
+		      return "error";
+		    }
+	}
+	 private static String getDayOfWeek(int value) {
+		    switch (value) {
+		      case Calendar.MONDAY:
+		        return "MON";
+		      case Calendar.TUESDAY:
+		        return "TUE";
+		      case Calendar.WEDNESDAY:
+		        return "WED";
+		      case Calendar.THURSDAY:
+		        return "THU";
+		      case Calendar.FRIDAY:
+		        return "FRI";
+		      case Calendar.SATURDAY:
+		        return "SAT";
+		      case Calendar.SUNDAY:
+		        return "SUN";
+		      default:
+		        return "Unknown";
+		    }
+		  }
 
 
 }

@@ -1,4 +1,4 @@
-<%@ page import="com.project.programs.User" %>
+
 <html lang="en">
 
 <head>
@@ -12,33 +12,7 @@
 </head>
 
 <body>
-   <div class="topnav" id="myTopnav">
-<%!
-	public String link(){
-	if(User.FName == null){
-		return "login.jsp";
-	}
-	else{
-		return "UserProfile.jsp";
-	}
-}
-%>
-	<a href="<%= link() %>" class="active"><%
-	if(User.FName == null){
-		out.print("Login");
-	}
-	else{
-		out.print(User.FName);
-	}
-	%></a></li> 
-	<a href="#">Services</a></li>  
-   <a href="AboutUs.html">About Us</a></li>
-   <a href="ContactUs.html">Contact Us</a></li>
-   
-   <img src="images/Logo.png" height="50" width="50" Style="margin-left:10px; margin-top:5px;">
-    
-   
-</div>
+  
     <div class="hero">
         <div class="container">
             <form>

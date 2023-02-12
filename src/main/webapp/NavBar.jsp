@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="com.project.programs.ReadCookie" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +10,23 @@
 </head>
 <body>
 <div class="topnav" id="myTopnav">
+<%
+String Name = null;
+Cookie[] ck = request.getCookies();
+
+if (ck != null) {
+    for (Cookie ckName : ck) {
+        if (ckName.getName().equals("Name")) {
+            Name = ckName.getValue();
+            // do something with the cookie value
+           
+        }
+    }
+}
+%>
 <%!
-	public String link(){
-	if(ReadCookie.Name == null){
+	public String link(String Name){
+	if(Name == null){
 		return "login.jsp";
 	}
 	else{
@@ -20,19 +34,24 @@
 	}
 }
 %>
-	<a href="<%= link() %>" class="active"><%
-	if(ReadCookie.Name == null){
+	<a href="<%= link(Name) %>" class="active"><%
+	if(Name == null){
 		out.print("Login");
 	}
 	else{
-		out.print(ReadCookie.Name);
+		out.print(Name);
 	}
 	%></a></li> 
    <a href="#">Your Bookings</a></li>
    <a href="AboutUs.html">About Us</a></li>
-   <a href="ContactUs.jsp">Contact Us</a></li>
-   
-   <img src="images/Logo.png" height="50" width="50" Style="margin-left:10px; margin-top:5px;">
+   <a href="ContactUs">Contact Us</a></li>
+  
+   <img src="images/Logo.png" height="50" width="50" Style="margin-left:10px; margin-top:5px;" onclick="redirectToHomepage()" >
+   <script>
+  function redirectToHomepage() {
+    window.location.href = "Home";
+  }
+</script>
     
    
 </div>

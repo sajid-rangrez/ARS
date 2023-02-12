@@ -28,7 +28,7 @@
               <input type="date" class="date"  min="<%= LocalDate.now() %> name="RDate">
            </div>
            <div class="inputBox">
-               <p for="Class">Class:</p>
+               <p for="Class">CLASS:</p>
             <select name="Class" id="cars">
               <option value="Economy">Economy</option>
               <option value="Bussiness">Bussiness</option>

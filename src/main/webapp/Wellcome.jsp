@@ -1,5 +1,5 @@
 <%@ page import="com.project.programs.User" %>
-<%@ page import="com.project.programs.ReadCookie" %>
+
 <%@ page import="java.time.LocalDate" %>
 
 <html>

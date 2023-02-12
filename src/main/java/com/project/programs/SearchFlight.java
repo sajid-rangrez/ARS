@@ -91,18 +91,18 @@ public class SearchFlight extends HttpServlet {
 			
 			while(result.next()) {
 				if(Class.equals("Economy")) {
-					Price = result.getInt(9);
+					Price = result.getInt(6);
 				}
 				else if(Class.equals("Bussiness")) {
-					Price = result.getInt(10);
+					Price = result.getInt(7);
 				}
 				else if(Class.equals("Premium")) {
-					Price = result.getInt(11);
+					Price = result.getInt(8);
 				}
 				else if(Class.equals("First-Class")) {
-					Price = result.getInt(12);
+					Price = result.getInt(9);
 				}
-				out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(7)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button  type=\"button\">Book</button> </container> </box>");
+				out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button  type=\"button\">Book</button> </container> </box>");
 				System.out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(7)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">5000</price> <button  type=\"button\">Book</button> </container> </box>");
 
 				

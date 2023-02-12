@@ -27,8 +27,8 @@ public class AddFlight extends HttpServlet {
 	   String url = "jdbc:mysql://localhost:3306/ARS";
 	   String user = "root";
 	   String pwd = "root";
-	   private static final String  QUERY = "INSERT into `FLIGHTS` (`Departure`, `Destination`, `Flight_Time`,`Landing_Time`, `Distance`, `Flight_Duration`, `Flight_Number`, `Plane_Model`, `E_Price`, `B_Price`, `PE_Price`, `FC_Price`, `Mon`,`Tue`,`Wed`, `Thu`, `Fri`, `Sat`, `Sun`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
-	   
+	   private static final String  QUERY = "INSERT into `FLIGHTS` (`Departure`, `Destination`, `Flight_Time`,`Landing_Time`, `Flight_Number`, `E_Price`, `B_Price`, `PE_Price`, `FC_Price`, `Mon`,`Tue`,`Wed`, `Thu`, `Fri`, `Sat`, `Sun`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
+   
 	   static void close() throws SQLException, IOException {
 	        if(result != null){
 	            result.close();
@@ -68,10 +68,7 @@ public class AddFlight extends HttpServlet {
 		String Destination = request.getParameter("Destination");
 		String Flight_Time = request.getParameter("Flight_Time");
 		String Landing_Time = request.getParameter("Landing_Time");
-		String Distance = request.getParameter("Distance");
-		String Flight_Duration = request.getParameter("Flight_Duration");
 		String Flight_Number = request.getParameter("Flight_Number");
-		String Plane_Model = request.getParameter("Plane_Model");
 		String E_Price = request.getParameter("E_Price");
 		String B_Price = request.getParameter("B_Price");
 		String PE_Price = request.getParameter("PE_Price");
@@ -89,7 +86,7 @@ public class AddFlight extends HttpServlet {
 			 PrintWriter out = response.getWriter();
 			 PreparedStatement stmt = con.prepareStatement(QUERY);
 			 
-// This field was for testing ther response			 
+// This field was for testing there response			 
 //			 out.println(Departure);
 //			 out.println(Destination);
 //			 out.println(Flight_Time);
@@ -116,61 +113,58 @@ public class AddFlight extends HttpServlet {
 				 stmt.setString(2,Destination);
 				 stmt.setString(3,Flight_Time);
 				 stmt.setString(4,Landing_Time);
-				 stmt.setString(5,Distance);
-				 stmt.setString(6,Flight_Duration);
-				 stmt.setString(7,Flight_Number);
-				 stmt.setString(8,Plane_Model);
-				 stmt.setString(9,E_Price);
-				 stmt.setString(10,B_Price);
-				 stmt.setString(11,PE_Price);
-				 stmt.setString(12,FC_Price);
+				 stmt.setString(5,Flight_Number);
+				 stmt.setString(6,E_Price);
+				 stmt.setString(7,B_Price);
+				 stmt.setString(8,PE_Price);
+				 stmt.setString(9,FC_Price);
 				 if(Mon == null) {
+					 stmt.setString(10,"FALSE");
+				 }
+				 else {
+					 stmt.setString(10,"TRUE");
+				 }
+				 if(Tue == null) {
+					 stmt.setString(11,"FALSE");
+					 
+				 }
+				 else {
+					 stmt.setString(11,"TRUE");
+				 }
+				 if(Wed == null) {
+					 
+					 stmt.setString(12,"FALSE");
+				 }
+				 else {
+					 stmt.setString(12,"TRUE");
+				 }
+				 if(Thu == null) {
 					 stmt.setString(13,"FALSE");
+					 
 				 }
 				 else {
 					 stmt.setString(13,"TRUE");
 				 }
-				 if(Tue == null) {
+				 if(Fri == null) {
 					 stmt.setString(14,"FALSE");
 					 
 				 }
 				 else {
 					 stmt.setString(14,"TRUE");
 				 }
-				 if(Wed == null) {
-					 
+				 if(Sat == null) {
 					 stmt.setString(15,"FALSE");
+					 
 				 }
 				 else {
 					 stmt.setString(15,"TRUE");
 				 }
-				 if(Thu == null) {
+				 if(Sun == null) {
 					 stmt.setString(16,"FALSE");
 					 
 				 }
 				 else {
 					 stmt.setString(16,"TRUE");
-				 }
-				 if(Fri == null) {
-					 stmt.setString(17,"FALSE");
-					 
-				 }
-				 else {
-					 stmt.setString(17,"TRUE");
-				 }
-				 if(Sat == null) {
-					 stmt.setString(18,"FALSE");
-					 
-				 }
-				 else {
-					 stmt.setString(18,"TRUE");
-				 }
-				 if(Sun == null) {
-					 stmt.setString(19,"FALSE");
-					 
-				 }
-				 else {
-					 stmt.setString(19,"TRUE");
 				 }
 				 
 				 
@@ -178,18 +172,7 @@ public class AddFlight extends HttpServlet {
 				 System.out.println("Flight Added Successfully");
 				 out.println("Flight Added Successfully");
 			
-				 
-				 
-				  
-//				 
-			 
-			 
-			 
-	         
-	        	
-		 
-        	 
-             
+				
 		
 		} catch (IOException e) {
 			 System.out.println("Registeration Unuccessfull");

@@ -82,7 +82,7 @@ public class Login extends HttpServlet {
 //	Request Dispeture With Include
 
 //				   req.getRequestDispatcher("/HomePage.jsp").forward(req, resp);
-				   resp.sendRedirect("readCookie");
+				   resp.sendRedirect("Home");
 				   System.out.println("Login Successfully");
 			   }
 			   else {

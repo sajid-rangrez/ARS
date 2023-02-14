@@ -28,7 +28,7 @@ public class AddFlight extends HttpServlet {
 	   String user = "root";
 	   String pwd = "root";
 	   private static final String  QUERY = "INSERT into `FLIGHTS` (`Departure`, `Destination`, `Flight_Time`,`Landing_Time`, `Flight_Number`, `E_Price`, `B_Price`, `PE_Price`, `FC_Price`, `Mon`,`Tue`,`Wed`, `Thu`, `Fri`, `Sat`, `Sun`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
-   
+	   
 	   static void close() throws SQLException, IOException {
 	        if(result != null){
 	            result.close();
@@ -171,6 +171,14 @@ public class AddFlight extends HttpServlet {
 				 stmt.executeUpdate();
 				 System.out.println("Flight Added Successfully");
 				 out.println("Flight Added Successfully");
+				   try {
+					   String  QUERY2 = "CREATE TABLE "+Flight_Number+" (Date DATE, E1 varchar(20) DEFAULT 'O', E2 varchar(20)DEFAULT 'O', E3 varchar(20) DEFAULT 'O', E4 varchar(20) DEFAULT 'O', E5 varchar(20) DEFAULT 'O', E6 varchar(20) DEFAULT 'O', E7 varchar(20) DEFAULT 'O', E8 varchar(20) DEFAULT 'O', E9 varchar(20) DEFAULT 'O', E10 varchar(20) DEFAULT 'O', PE1 varchar(20) DEFAULT 'O', PE2 varchar(20) DEFAULT 'O', PE3 varchar(20) DEFAULT 'O', PE4 varchar(20) DEFAULT 'O', PE5 varchar(20) DEFAULT 'O', PE6 varchar(20) DEFAULT 'O', PE7 varchar(20) DEFAULT 'O', PE8 varchar(20) DEFAULT 'O', PE9 varchar(20) DEFAULT 'O', PE10 varchar(20) DEFAULT 'O', B1 varchar(20) DEFAULT 'O', B2 varchar(20) DEFAULT 'O', B3 varchar(20) DEFAULT 'O', B4 varchar(20) DEFAULT 'O', B5 varchar(20) DEFAULT 'O', B6 varchar(20) DEFAULT 'O', B7 varchar(20) DEFAULT 'O', B8 varchar(20) DEFAULT 'O', B9 varchar(20) DEFAULT 'O', B10 varchar(20) DEFAULT 'O', F1 varchar(20) DEFAULT 'O', F2 varchar(20) DEFAULT 'O', F3 varchar(20) DEFAULT 'O', F4 varchar(20) DEFAULT 'O', F5 varchar(20) DEFAULT 'O', F6 varchar(20) DEFAULT 'O', F7 varchar(20) DEFAULT 'O', F8 varchar(20) DEFAULT 'O', F9 varchar(20) DEFAULT 'O', F10 varchar(20) DEFAULT 'O')";
+					   stmt.executeUpdate(QUERY2);
+					   System.out.println("DataBase Added Successfully");
+				   } catch (SQLException e) {
+						 System.out.println("DataBase Creation Unuccessfull");
+				            e.printStackTrace();
+				   }
 			
 				
 		

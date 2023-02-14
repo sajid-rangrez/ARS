@@ -88,6 +88,9 @@ public class SearchFlight extends HttpServlet {
 			
 			req.getRequestDispatcher("NavBar.jsp").include(req, resp);
 			System.out.println(Day);
+			out.println("<div class=\"cbody\">");
+			out.println("<h2>"+From +" To "+To+"</h2>");
+			out.println("<h4>"+Day +" : "+ Departure+"</h4>");
 			
 			while(result.next()) {
 				if(Class.equals("Economy")) {
@@ -102,12 +105,12 @@ public class SearchFlight extends HttpServlet {
 				else if(Class.equals("First-Class")) {
 					Price = result.getInt(9);
 				}
-				out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button  type=\"button\">Book</button> </container> </box>");
-				System.out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(7)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">5000</price> <button  type=\"button\">Book</button> </container> </box>");
-
+				out.println(" <box> <form action=\"BookFlight\" class=\"element\"> <input type=\"hidden\" name=\"Date\" value=\""+Departure+"\"> <id  class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button name=\"Flight\" value=\""+result.getString(5)+"\"  type=\"submit\">Book</button> </form> </box>");
+				System.out.println(" <box> <form action=\"BookFlight\" class=\"element\"> <id class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button name=\"Flight\" value=\""+result.getString(5)+"\"  type=\"submit\">Book</button> </form> </box>");
 				
 				out.println("<br>");
 				}
+			out.println("</div>");
 
 			
 		}

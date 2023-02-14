@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>NavBar</title>
+<title>ARS</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="CssFiles/HomePage.css">
 </head>
 <body>
@@ -30,7 +31,7 @@ if (ck != null) {
 		return "login.jsp";
 	}
 	else{
-		return "UserProfile.jsp";
+		return "Profile";
 	}
 }
 %>

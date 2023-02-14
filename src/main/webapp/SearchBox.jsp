@@ -36,6 +36,10 @@
               <option value="First-Class">First-Class</option>
             </select>
            </div>
+           	<div class="inputBox">
+         		<p>TRAVELERS</p>
+         		<input name ="pass" type="Number" class="pass" min="1" max="5" placeholder="Total" required>
+      		</div>
            <div class="inputBox">
             <p class="white"> </p>
             <input type="submit" value="   Search   ">

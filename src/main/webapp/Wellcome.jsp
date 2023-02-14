@@ -21,7 +21,7 @@
 </h2>
 </div> 
 <div class="main-button">
-<a id="contact-btn" href="ContactUs.jsp"><b>Contact us</b></a> &nbsp;&nbsp;&nbsp;
+<a id="contact-btn" href="ContactUs"><b>Contact us</b></a> &nbsp;&nbsp;&nbsp;
 <a id="about-btn" href="AboutUs.html"><b>About us</b></a>
 </div>
 </div>

@@ -220,7 +220,12 @@ body{
     }
       .searchbox .inputBox .date{
       
-        width: 80%;
+        width: 79px;
+        background: transparent;
+        
+    }
+    .searchbox .inputBox .pass{
+        width: 70px;
         background: transparent;
         
     }
@@ -249,22 +254,54 @@ body{
     }
   }
   
+  /* Search result list css*/
+  
+  .cbody h2{
+    color: antiquewhite;
+   
+    text-align: center;
+}
+  .cbody h3{
+    color: orange;
+   
+    text-align: center;
+}
+ .cbody h4{
+    color: antiquewhite;
+   
+    text-align: center;
+}
+    .cbody{
+    margin-top: 50px;
+    align-items: center;
+   color: #ff1500;
+   background-color: #222;
+   width: 60%;
+   height: auto;
+   padding: 30px;
+   padding:10px 0px 30px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  
+       }
+  
   box{
     font-size: 120%;
     color: whitesmoke;
     display: flex;
-    width: 60%;
+    width: 90%;
     height: 70px;
     margin-top: 3px;
     margin-left: auto;
     margin-right: auto;
     background-color:#222;
-    border: 1px solid #ff1500;
-    border-radius: 20px;
+    border: 1px solid #4d4d4d;
+    
     
     
 }
-container{
+.cbody form{
 
     align-items: center;
     display: flex;
@@ -289,4 +326,13 @@ button{
     border-radius: 20px;
     margin-right: 20px;
     
+}
+.tagline{
+	text-align:center;
+	color: #4d4d4d;
+	margin-left: 8%;
+    margin-right: 8%;
+    display:flex;
+    margin-top:10px;
+    margin-bottom:6px;
 }

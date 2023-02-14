@@ -49,6 +49,7 @@ public class SearchFlight extends HttpServlet {
 		String Departure = req.getParameter("DDate");
 		String Return = req.getParameter("RDate");
 		String Class = req.getParameter("Class");
+		String pass = req.getParameter("pass");
 		String Day = null;
 		String Query = null;
 		int Price = 0;
@@ -88,8 +89,12 @@ public class SearchFlight extends HttpServlet {
 			
 			req.getRequestDispatcher("NavBar.jsp").include(req, resp);
 			System.out.println(Day);
-			
+			out.println("<div class=\"cbody\">");
+			out.println("<h2>"+From +" To "+To+"</h2>");
+			out.println("<h4>"+Day +" : "+ Departure+"</h4>");
+			int count = 0;
 			while(result.next()) {
+				count++;
 				if(Class.equals("Economy")) {
 					Price = result.getInt(6);
 				}
@@ -102,12 +107,18 @@ public class SearchFlight extends HttpServlet {
 				else if(Class.equals("First-Class")) {
 					Price = result.getInt(9);
 				}
-				out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button  type=\"button\">Book</button> </container> </box>");
-				System.out.println(" <box> <container class=\"element\"> <id class=\"element\">"+result.getString(7)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">5000</price> <button  type=\"button\">Book</button> </container> </box>");
-
+				if(count == 1) {
+					out.println("<div class=\"tagline\"><id  class=\"element\">FlightId</id> <from class=\"element\">Departure</from> <to class=\"element\">Destination</to> <departure class=\"element\">FlightTime</departure> <arival class=\"element\">LandingTime</arival> <price class=\"element\">Price</price> <Action class=\"element\">Action</Action></div>");
+				}
+				out.println(" <box> <form action=\"BookFlight\" class=\"element\"> <input type=\"hidden\" name=\"Date\" value=\""+Departure+"\"> <input type=\"hidden\" name=\"pass\" value=\""+pass+"\"> <id  class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button name=\"Flight\" value=\""+result.getString(5)+"\"  type=\"submit\">Book</button> </form> </box>");
+				System.out.println(" <box> <form action=\"BookFlight\" class=\"element\"> <id class=\"element\">"+result.getString(5)+"</id> <from class=\"element\">"+result.getString(1)+"</from> <to class=\"element\">"+result.getString(2)+"</to> <departure class=\"element\">"+result.getString(3)+"</departure> <arival class=\"element\">"+result.getString(4)+"</arival> <price class=\"element\">"+Price+"</price> <button name=\"Flight\" value=\""+result.getString(5)+"\"  type=\"submit\">Book</button> </form> </box>");
 				
 				out.println("<br>");
 				}
+			if(count == 0) {
+				out.println("<h3>Sorry! No Flights Available On This Rout.</h3>");
+			}
+			out.println("</div>");
 
 			
 		}

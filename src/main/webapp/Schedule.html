@@ -1,79 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Schedule Form</title>
+    <title>Schedule Form</title>
+    <link rel="stylesheet" href="CssFiles/Schedule.css">
 </head>
+
 <body>
-    <div class="form">
-        <div class="register">
-            <h2>Flight Schedule:</h2>
-            <form id="schedule" action="AddFlight">
-                
+
+
+    <form id="schedule" action="AddFlight">
+        <h2>Flight Schedule:</h2>
+        <div class="flex">
+            <div class="shb1">
                 <label>Departure:</label>
                 <br>
-                <input type="text" name="Departure" placeholder="Enter Departure ">
+                <input class="input" type="text" name="Departure" placeholder="Enter Departure " required>
                 <br><br>
                 <label>Destination:</label>
                 <br>
-                <input type="text" name="Destination" placeholder="Enter Destination">
+                <input class="input" type="text" name="Destination" placeholder="Enter Destination" required>
                 <br><br>
                 <label> Flight Date/time:</label>
                 <br>
-                <input type="time" name="Flight_Time" placeholder="date of arrival">
+                <input class="input" type="time" name="Flight_Time" placeholder="date of arrival" required>
                 <br><br>
                 <label>Landing Date/time:</label>
                 <br>
-                <input type="time" name="Landing_Time" placeholder="date of departure">
+                <input class="input" type="time" name="Landing_Time" placeholder="date of departure" required>
                 <br><br>
-                
+                <label>Days Of flights:</label>
+                <br>
+                <div class="days" class="flex">
+                    <label>Mon</label><input type="checkbox" name="Mon">
+                    <label>Tue</label><input type="checkbox" name="Tue">
+                    <label>Wed</label><input type="checkbox" name="Wed">
+                    <label>Thu</label><input type="checkbox" name="Thu">
+                    <label>Fri</label><input type="checkbox" name="Fri">
+                    <label>Sat</label><input type="checkbox" name="Sat">
+                    <label>Sun</label><input type="checkbox" name="Sun">
+
+                </div>
+            </div>
+            <div class="shb2">
                 <label>Flight Number:</label>
                 <br>
-                <input type="text" name="Flight_Number"  placeholder="Flight number">
+                <input class="input" type="text" name="Flight_Number" placeholder="Flight number" required>
                 <br><br>
-                
 
-                <label>Economy class</label>
+
+                <label>Price for Economy class</label>
                 <br>
-                <input type="text" name="E_Price"  >
-                <br>
-                
-                
-                <label>Business class</label>
-                <br>
-                <input type="text" name="B_Price" >
-                <br>
-                
-                
-                <label>Premium class</label>
-                <br>
-                <input type="text" name="PE_Price" >
-                <br>
-                
-                
-                <label>First-class seats</label>
-                <br>
-                <input type="text" name="FC_Price" >
-             
-                <br>
-                
-                
-                <label>Days Of flights:</label> 
-                <br>
-                mon<input type="checkbox" name="Mon">
-                tue<input type="checkbox" name="Tue">
-                wed<input type="checkbox" name="Wed">
-                thu<input type="checkbox" name="Thu">
-                fri<input type="checkbox" name="Fri">
-                sat<input type="checkbox" name="Sat">
-                sun<input type="checkbox" name="Sun">
+                <input class="input" type="number" name="E_Price" placeholder="Enter Amount" required>
                 <br><br>
-                <input type = "submit" value="Add" id="submit">
-                
-            </form>
+
+
+                <label>Price for Business class</label>
+                <br>
+                <input class="input" type="numbert" name="B_Price" placeholder="Enter Amount" required>
+                <br><br>
+
+
+                <label>Price for Premium class</label>
+                <br>
+                <input class="input" type="number" name="PE_Price" placeholder="Enter Amount" required>
+                <br><br>
+
+
+                <label>Price for First-class seats</label>
+                <br>
+                <input class="input" type="number" name="FC_Price" placeholder="Enter Amount" required>
+
+            </div>
         </div>
-    </div>
+
+        <div class="bt">
+            <button> Schedule</button>
+        </div>
+
+
+    </form>
+
 </body>
+
 </html>

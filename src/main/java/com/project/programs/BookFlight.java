@@ -40,10 +40,18 @@ public class BookFlight extends HttpServlet {
 		String Flight = request.getParameter("Flight");
 		String Date = request.getParameter("Date");
 		String pass = request.getParameter("pass");
-		System.out.println(Flight);
-		System.out.println(Date);
-		System.out.println(pass);
+		String Class = request.getParameter("Class");
+//		System.out.println(Flight);
+//		System.out.println(Date);
+//		System.out.println(pass);
+//		
+		//converting string into integer
+		int n = Integer.parseInt(pass);
 		request.getRequestDispatcher("NavBar.jsp").include(request, response);
+		request.getRequestDispatcher("Travlers.jsp").include(request, response);
+		
+		
+		
 	}
 
 	

@@ -186,7 +186,7 @@ body{
           margin-bottom: 8px;
       }
      
-      .searchbox .inputBox input{
+     input{
         vertical-align: middle;
         
           outline: none;
@@ -194,7 +194,7 @@ body{
           
           width: 90%;
           font-size: 1.1em;
-          border:2px solid #ff6600;
+          border:2px solid #4d4d4d;
           outline:none;
           color: rgb(118, 116, 116);
           background: transparent;
@@ -211,7 +211,7 @@ body{
           min-width: 20px;
           width: auto;
           font-size: 1.1em;
-          border:2px solid #ff6600;
+          border:2px solid #4d4d4d;
           outline:none;
           color: rgb(118, 116, 116);
           background: transparent;
@@ -336,3 +336,46 @@ button{
     margin-top:10px;
     margin-bottom:6px;
 }
+
+
+/* passbox*/
+.passbox{
+  color: #ded4d4;
+  text-align: center;
+  border-radius: 20px;
+  width: 500px;
+  height: auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #222;
+  padding: 30px;
+}
+.passbox h2{
+  margin-top: -12px;
+}
+.passbox .inputBox{
+  display:flex;
+  margin-top: 20px;
+  
+}
+.passbox select{
+  width:50%;
+  margin-left: 10px;
+}
+.box form{
+  display: block;
+}
+.passbox button{
+        width:30%;
+        margin-top: 25px;
+        left: 0px;
+          outline:none;
+          border: none;
+          background: #ff1500;
+          color:white;
+          cursor: pointer;
+          letter-spacing: 2px;
+          padding: 10px;
+}
+

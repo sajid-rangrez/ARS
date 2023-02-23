@@ -33,7 +33,7 @@
               <option value="Economy">Economy</option>
               <option value="Bussiness">Bussiness</option>
               <option value="Premium">Premium </option>
-              <option value="First-Class">First-Class</option>
+              <option value="First-Class">FirstClass</option>
             </select>
            </div>
            	<div class="inputBox">

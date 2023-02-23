@@ -85,28 +85,7 @@ public class AddFlight extends HttpServlet {
 	
 			 PrintWriter out = response.getWriter();
 			 PreparedStatement stmt = con.prepareStatement(QUERY);
-			 
-// This field was for testing there response			 
-//			 out.println(Departure);
-//			 out.println(Destination);
-//			 out.println(Flight_Time);
-//			 out.println(Landing_Time);
-//			 out.println(Distance);
-//			 out.println(Flight_Duration);
-//			 out.println(Flight_Number);
-//			 out.println(Plane_Model);
-//			 out.println(E_Price);
-//			 out.println(B_Price);
-//			 out.println(PE_Price);
-//			 out.println(FC_Price);
-//			 out.println(Mon);
-//			 out.println(Tue);
-//			 out.println(Wed);
-//			 out.println(Thu);
-//			 out.println(Fri);
-//			 out.println(Sat);
-//			 out.println(Sun);
-	         
+   
 			 
 				 
 				 stmt.setString(1,Departure);
@@ -171,14 +150,16 @@ public class AddFlight extends HttpServlet {
 				 stmt.executeUpdate();
 				 System.out.println("Flight Added Successfully");
 				 out.println("Flight Added Successfully");
-				   try {
-					   String  QUERY2 = "CREATE TABLE "+Flight_Number+" (Date DATE, E1 varchar(20) DEFAULT 'O', E2 varchar(20)DEFAULT 'O', E3 varchar(20) DEFAULT 'O', E4 varchar(20) DEFAULT 'O', E5 varchar(20) DEFAULT 'O', E6 varchar(20) DEFAULT 'O', E7 varchar(20) DEFAULT 'O', E8 varchar(20) DEFAULT 'O', E9 varchar(20) DEFAULT 'O', E10 varchar(20) DEFAULT 'O', PE1 varchar(20) DEFAULT 'O', PE2 varchar(20) DEFAULT 'O', PE3 varchar(20) DEFAULT 'O', PE4 varchar(20) DEFAULT 'O', PE5 varchar(20) DEFAULT 'O', PE6 varchar(20) DEFAULT 'O', PE7 varchar(20) DEFAULT 'O', PE8 varchar(20) DEFAULT 'O', PE9 varchar(20) DEFAULT 'O', PE10 varchar(20) DEFAULT 'O', B1 varchar(20) DEFAULT 'O', B2 varchar(20) DEFAULT 'O', B3 varchar(20) DEFAULT 'O', B4 varchar(20) DEFAULT 'O', B5 varchar(20) DEFAULT 'O', B6 varchar(20) DEFAULT 'O', B7 varchar(20) DEFAULT 'O', B8 varchar(20) DEFAULT 'O', B9 varchar(20) DEFAULT 'O', B10 varchar(20) DEFAULT 'O', F1 varchar(20) DEFAULT 'O', F2 varchar(20) DEFAULT 'O', F3 varchar(20) DEFAULT 'O', F4 varchar(20) DEFAULT 'O', F5 varchar(20) DEFAULT 'O', F6 varchar(20) DEFAULT 'O', F7 varchar(20) DEFAULT 'O', F8 varchar(20) DEFAULT 'O', F9 varchar(20) DEFAULT 'O', F10 varchar(20) DEFAULT 'O', PRIMARY KEY (Date))";
-					   stmt.executeUpdate(QUERY2);
-					   System.out.println("DataBase Added Successfully");
-				   } catch (SQLException e) {
-						 System.out.println("DataBase Creation Unuccessfull");
-				            e.printStackTrace();
-				   }
+				 
+				 
+//				   try {
+//					   String  QUERY2 = "CREATE TABLE "+Flight_Number+" (Date DATE, E1 varchar(20) DEFAULT 'O', E2 varchar(20)DEFAULT 'O', E3 varchar(20) DEFAULT 'O', E4 varchar(20) DEFAULT 'O', E5 varchar(20) DEFAULT 'O', E6 varchar(20) DEFAULT 'O', E7 varchar(20) DEFAULT 'O', E8 varchar(20) DEFAULT 'O', E9 varchar(20) DEFAULT 'O', E10 varchar(20) DEFAULT 'O', PE1 varchar(20) DEFAULT 'O', PE2 varchar(20) DEFAULT 'O', PE3 varchar(20) DEFAULT 'O', PE4 varchar(20) DEFAULT 'O', PE5 varchar(20) DEFAULT 'O', PE6 varchar(20) DEFAULT 'O', PE7 varchar(20) DEFAULT 'O', PE8 varchar(20) DEFAULT 'O', PE9 varchar(20) DEFAULT 'O', PE10 varchar(20) DEFAULT 'O', B1 varchar(20) DEFAULT 'O', B2 varchar(20) DEFAULT 'O', B3 varchar(20) DEFAULT 'O', B4 varchar(20) DEFAULT 'O', B5 varchar(20) DEFAULT 'O', B6 varchar(20) DEFAULT 'O', B7 varchar(20) DEFAULT 'O', B8 varchar(20) DEFAULT 'O', B9 varchar(20) DEFAULT 'O', B10 varchar(20) DEFAULT 'O', F1 varchar(20) DEFAULT 'O', F2 varchar(20) DEFAULT 'O', F3 varchar(20) DEFAULT 'O', F4 varchar(20) DEFAULT 'O', F5 varchar(20) DEFAULT 'O', F6 varchar(20) DEFAULT 'O', F7 varchar(20) DEFAULT 'O', F8 varchar(20) DEFAULT 'O', F9 varchar(20) DEFAULT 'O', F10 varchar(20) DEFAULT 'O', PRIMARY KEY (Date))";
+//					   stmt.executeUpdate(QUERY2);
+//					   System.out.println("DataBase Added Successfully");
+//				   } catch (SQLException e) {
+//						 System.out.println("DataBase Creation Unuccessfull");
+//				            e.printStackTrace();
+//				   }
 			
 				
 		

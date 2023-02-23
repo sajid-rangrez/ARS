@@ -86,7 +86,7 @@ public class Login extends HttpServlet {
 				   System.out.println("Login Successfully");
 			   }
 			   else {
-				   out.println("<h3>Invalid login details. Please try again!</h3>");
+				   out.println("Invalid Login Details. Try Again!");
 				   req.getRequestDispatcher("login.jsp").include(req, resp);
 				   System.out.println(email);
 				   System.out.println(password);

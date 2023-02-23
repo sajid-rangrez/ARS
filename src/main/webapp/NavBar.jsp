@@ -13,12 +13,22 @@
 <div class="topnav" id="myTopnav">
 <%
 String Name = null;
+String Access = null;
 Cookie[] ck = request.getCookies();
 
 if (ck != null) {
     for (Cookie ckName : ck) {
         if (ckName.getName().equals("Name")) {
             Name = ckName.getValue();
+            // do something with the cookie value
+           
+        }
+    }
+}
+if (ck != null) {
+    for (Cookie ckName : ck) {
+        if (ckName.getName().equals("Access")) {
+            Access = ckName.getValue();
             // do something with the cookie value
            
         }
@@ -46,6 +56,15 @@ if (ck != null) {
    <a href="#">Your Bookings</a></li>
    <a href="AboutUs.html">About Us</a></li>
    <a href="ContactUs">Contact Us</a></li>
+   <%
+   
+ 	if(Access != null){
+ 		if(Access.equals("ADMIN")){
+ 		   out.print("<a href=\"Schedule.html\">Add Flight</a></li>");
+ 	   }
+ 	}
+   
+   %>
   
    <img src="images/Logo.png" height="50" width="50" Style="margin-left:10px; margin-top:5px;" onclick="redirectToHomepage()" >
    <script>

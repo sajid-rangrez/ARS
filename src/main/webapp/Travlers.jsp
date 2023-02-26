@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page errorPage="ErrorPage.html" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
 		int[] npass = new int[n];
 %>
     <div class="box">
-        <form class="passbox" action="BookTickets" method="post"> 
+        <form class="passbox" action="Tickets" method="post"> 
            <h2>Enter Passenger Details</h2>
            <input type="hidden" name="Flight" value="<%=Flight%>">
            <input type="hidden" name="Date" value="<%=Date%>">

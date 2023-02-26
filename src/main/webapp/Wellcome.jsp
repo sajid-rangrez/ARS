@@ -1,6 +1,5 @@
-<%@ page import="com.project.programs.User" %>
-
 <%@ page import="java.time.LocalDate" %>
+<%@ page errorPage="ErrorPage.html" %>
 
 <html>
   <head>

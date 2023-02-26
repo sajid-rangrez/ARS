@@ -29,6 +29,18 @@ public class MyTickets extends HttpServlet {
 	String user = "root";
 	String pwd = "root";
        
+	static void close() throws SQLException, IOException {
+        if(result != null){
+            result.close();
+        }
+        if(pstat != null){
+            pstat.close();
+        }
+        if(con != null){
+            con.close();
+        }
+        
+    }
 	
 	public void init() throws ServletException{
 		try {
@@ -54,6 +66,7 @@ public class MyTickets extends HttpServlet {
 		   String Flight = null;  
 		   String From = null;  
 		   String To = null;  
+		   int n = 0;
 		   
 		//Check login
 				Cookie[] cookies = request.getCookies();
@@ -118,14 +131,27 @@ public class MyTickets extends HttpServlet {
 	    	  To = result.getString(6);
 	    	  Id = result.getString(7);
 	    	  
-	    	  out.println(" <box> <form action=\"Ticket.jsp\" class=\"element\"> <input type=\"hidden\" name=\"Id\" value=\""+Id+"\">  <id  class=\"element\">"+result.getString(1)+"</id> <from class=\"element\">"+result.getString(2)+"</from> <to class=\"element\">"+result.getString(3)+"</to> <departure class=\"element\">"+result.getString(4)+"</departure> <arival class=\"element\">"+result.getString(5)+"</arival> <price class=\"element\">"+To+"</price> <button  type=\"submit\">Book</button> </form> </box>");
-				
+	    	  out.println(" <box> <form action=\"Ticket\" class=\"element\"> <input type=\"hidden\" name=\"Id\" value=\""+Id+"\">  <id  class=\"element\">"+result.getString(1)+"</id> <from class=\"element\">"+result.getString(2)+"</from> <to class=\"element\">"+result.getString(3)+"</to> <departure class=\"element\">"+result.getString(4)+"</departure> <arival class=\"element\">"+result.getString(5)+"</arival> <price class=\"element\">"+To+"</price> <button  type=\"submit\">View</button> </form> </box>");
+				n++;
 	    	  
 	      }
+	      if(n==0) {
+	    	  out.println("<h3>No Tickets Here!</h3>");
+	      }
+	      
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
+		finally{
+            try {
+                close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 	}
 
 }

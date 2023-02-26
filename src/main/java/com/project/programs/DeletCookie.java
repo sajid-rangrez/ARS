@@ -13,6 +13,7 @@ public class DeletCookie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
 		Cookie ck1 = new Cookie("Name" ,"Del" );
 		   Cookie ck2 = new Cookie("Email" ,"Del" );
 		   Cookie ck3 = new Cookie("Access" ,"Del" );
@@ -23,6 +24,11 @@ public class DeletCookie extends HttpServlet {
 		   response.addCookie(ck2);
 		   response.addCookie(ck3);
 		   response.sendRedirect("Home");
+		   
+		}
+		catch(Exception e) {
+			response.sendRedirect("ErrorPage.html");
+		}
 	}
 
 	

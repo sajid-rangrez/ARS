@@ -120,6 +120,7 @@ public class Register extends HttpServlet {
 		} catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
+        	response.sendRedirect("ErrorPage.html");
             e.printStackTrace();
         }
 		finally{

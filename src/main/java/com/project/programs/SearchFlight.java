@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 
 import java.text.SimpleDateFormat;
@@ -32,6 +33,18 @@ public class SearchFlight extends HttpServlet {
 	String user = "root";
 	String pwd = "root";
        
+	static void close() throws SQLException, IOException {
+        if(result != null){
+            result.close();
+        }
+        if(pstat != null){
+            pstat.close();
+        }
+        if(con != null){
+            con.close();
+        }
+        
+    }
 	
 	public void init() throws ServletException{
 		try {
@@ -44,6 +57,7 @@ public class SearchFlight extends HttpServlet {
 	}
  
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
 		
 		String From = req.getParameter("FromCity");
 		String To = req.getParameter("ToCity");
@@ -140,9 +154,12 @@ public class SearchFlight extends HttpServlet {
 		}
 		catch(Exception e){
 			e.printStackTrace();
-			System.out.println("erroer");
+			System.out.println("erroer in before line 157");
 		}
-		
+		}
+		catch(Exception e) {
+			resp.sendRedirect("ErrorPage.html");
+		}
 		
 	}
 	private static String getDay(String Date) {

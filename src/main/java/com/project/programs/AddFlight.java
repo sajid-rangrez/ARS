@@ -170,7 +170,7 @@ public class AddFlight extends HttpServlet {
 				 
 				 
 				 stmt.executeUpdate();
-				 System.out.println("Flight Added Successfully");
+				 System.out.println(Departure +" To "+ Destination +" Flight Added Successfully");
 				 out.println("Flight Added Successfully");
 				 
 				 

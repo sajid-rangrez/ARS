@@ -1,5 +1,3 @@
-<%@ page import="com.project.programs.User" %>
-
 <%@ page import="java.time.LocalDate" %>
 
 <html>

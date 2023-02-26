@@ -22,8 +22,8 @@ import java.security.SecureRandom;
 import java.util.Locale;
 
 
-@WebServlet("/BookTickets")
-public class BookTickets extends HttpServlet {
+@WebServlet("/Tickets")
+public class Tickets extends HttpServlet {
 	public static Connection con, con2 = null;
 	   public static Statement stat = null ;
 	   public static ResultSet result, result2 = null;
@@ -152,7 +152,7 @@ public class BookTickets extends HttpServlet {
 								break;
 							}
 							tid[t] = generateRandomString(l);
-							String query3 = "UPDATE seats SET e"+(i-2)+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
+							String query3 = "UPDATE seats SET "+"E"+(i-2)+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
 							pstmt.executeUpdate(query3);
 							seat[t] ="e"+(i-2);
 							System.out.println("E"+(i-2)+" is booked");
@@ -192,7 +192,7 @@ public class BookTickets extends HttpServlet {
 								break;
 							}
 							tid[t] = generateRandomString(l);
-							String query3 = "UPDATE seats SET B"+(i-12)+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
+							String query3 = "UPDATE seats SET "+("B"+(i-12))+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
 							pstmt.executeUpdate(query3);
 							seat[t] ="b"+(i-22);
 							t++;
@@ -228,7 +228,7 @@ public class BookTickets extends HttpServlet {
 								break;
 							}
 							tid[t] = generateRandomString(l);
-							String query3 = "UPDATE seats SET P"+(i-22)+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
+							String query3 = "UPDATE seats SET "+("P"+(i-22))+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
 							pstmt.executeUpdate(query3);
 							seat[t] ="p"+(i-22);
 							t++;
@@ -263,7 +263,7 @@ public class BookTickets extends HttpServlet {
 								break;
 							}
 							tid[t] = generateRandomString(l);
-							String query3 = "UPDATE seats SET F"+(i-32)+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
+							String query3 = "UPDATE seats SET "+("F"+(i-32))+" ='"+tid[t]+"' WHERE Date = '"+Date+"'";
 							pstmt.executeUpdate(query3);
 							seat[t] ="f"+(i-32);
 							t++;

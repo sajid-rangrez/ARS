@@ -13,6 +13,7 @@ import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,7 +48,6 @@ public class SearchFlight extends HttpServlet {
 		String From = req.getParameter("FromCity");
 		String To = req.getParameter("ToCity");
 		String Departure = req.getParameter("DDate");
-		String Return = req.getParameter("RDate");
 		String Class = req.getParameter("Class");
 		String pass = req.getParameter("pass");
 		String Day = null;
@@ -55,13 +55,29 @@ public class SearchFlight extends HttpServlet {
 		int Price = 0;
 		
 		
+		//Check login
+		Cookie[] cookies = req.getCookies();
+		String CheckEmail = null;
+        	if (cookies != null) {
+                // loop through the cookies and find the one with the name "myCookie"
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("Email")) {
+                        // do something with the cookie's value
+                        CheckEmail = cookie.getValue();
+                    }
+                    
+                }
+            }
+        	if(CheckEmail == null) {
+        		resp.sendRedirect("login.jsp");
+        	}
+        	
+		
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("text/html");
 		
 		Day = getDay(Departure);
-		if(Return != null) {
-			String Rday = getDay(Return);
-		}
+		
 		try {
 			if(Day.equals("MON")) {
 				Query = "select * from flights where Departure = ? AND Destination = ? AND  Mon = 'TRUE' ";

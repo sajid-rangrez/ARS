@@ -53,14 +53,14 @@ if (ck != null) {
 		out.print(Name);
 	}
 	%></a></li> 
-   <a href="#">Your Bookings</a></li>
+   <a href="MyTickets">My Tickets</a></li>
    <a href="AboutUs.html">About Us</a></li>
    <a href="ContactUs">Contact Us</a></li>
    <%
    
  	if(Access != null){
  		if(Access.equals("ADMIN")){
- 		   out.print("<a href=\"Schedule.html\">Add Flight</a></li>");
+ 		   out.print("<a href=\"Schedule\">Add Flight</a></li>");
  	   }
  	}
    

@@ -37,6 +37,7 @@ public class BookFlight extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
 		String Flight = request.getParameter("Flight");
 		String Date = request.getParameter("Date");
 		String pass = request.getParameter("pass");
@@ -49,6 +50,11 @@ public class BookFlight extends HttpServlet {
 		int n = Integer.parseInt(pass);
 		request.getRequestDispatcher("NavBar.jsp").include(request, response);
 		request.getRequestDispatcher("Travlers.jsp").include(request, response);
+		}
+		catch(Exception e) {
+			System.out.println("Error Page");
+			
+		}
 		
 		
 		

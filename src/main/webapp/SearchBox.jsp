@@ -23,10 +23,7 @@
               <p>DEPARTURE</p>  
               <input type="date" class="date" name="DDate" placeholder="Select Date" min="<%= LocalDate.now() %>" required>
            </div>
-           <div class="inputBox">
-              <p>RETURN</p>
-              <input type="date" class="date"  min="<%= LocalDate.now() %> name="RDate">
-           </div>
+           
            <div class="inputBox">
                <p for="Class">CLASS:</p>
             <select name="Class" id="cars">

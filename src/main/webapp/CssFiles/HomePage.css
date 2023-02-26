@@ -4,8 +4,8 @@
   
 }
 body{
-    background-color:#ded4d4;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+    background-color:#007399;
+    background-image: linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.6)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
 
   margin: 0;
 }
@@ -15,6 +15,7 @@ body{
   background-color:#222;
   overflow: hidden;
   box-shadow: #000;
+  
   
 }
 
@@ -93,7 +94,7 @@ body{
   .title h2{
     font-family: Lucida Fax;
     font-size: 40px;
-    color: #38caff;
+    color: #95ff00;
   }
   
   .main-button{
@@ -107,20 +108,22 @@ body{
   #contact-btn{
     display: inline-block;
     color: #fff;
-    border: 2px solid #ff6600;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     position: relative;
     cursor: pointer;
     padding: 12px 30px;
     background-color: #ff1500;
+    border-radius:30px;
   }
   
   #about-btn{
     color: #000;
-    border: 2px solid #ff6600;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     padding: 12px 30px;
     background-color: #fff;
     cursor: pointer;
     position: relative;
+    border-radius:30px;
     
   }
     
@@ -137,8 +140,8 @@ body{
           display: flex;
           position: relative;
           justify-content: center;
-          
-          box-shadow:0 0px 5px rgba(0,0,0,0.1) ;
+          border:2px solid #4d4d4d;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.63);
           border-radius:10px;
           
         }
@@ -195,6 +198,7 @@ body{
           width: 90%;
           font-size: 1.1em;
           border:2px solid #4d4d4d;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.63);
           outline:none;
           color: rgb(118, 116, 116);
           background: transparent;
@@ -212,6 +216,7 @@ body{
           width: auto;
           font-size: 1.1em;
           border:2px solid #4d4d4d;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.63);
           outline:none;
           color: rgb(118, 116, 116);
           background: transparent;
@@ -220,7 +225,7 @@ body{
     }
       .searchbox .inputBox .date{
       
-        width: 79px;
+        width: 100px;
         background: transparent;
         
     }
@@ -272,7 +277,7 @@ body{
     text-align: center;
 }
     .cbody{
-    margin-top: 50px;
+    margin-top: 90px;
     align-items: center;
    color: #ff1500;
    background-color: #222;
@@ -283,6 +288,8 @@ body{
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.63);
+  border:2px solid #4d4d4d;
   
        }
   
@@ -296,7 +303,8 @@ body{
     margin-left: auto;
     margin-right: auto;
     background-color:#222;
-    border: 1px solid #4d4d4d;
+    border: 2px solid #4d4d4d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
     
     
     
@@ -350,6 +358,8 @@ button{
   margin-right: auto;
   background-color: #222;
   padding: 30px;
+  border:2px solid #4d4d4d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.63);
 }
 .passbox h2{
   margin-top: -12px;
@@ -377,5 +387,38 @@ button{
           cursor: pointer;
           letter-spacing: 2px;
           padding: 10px;
+}
+
+/* Message Box*/
+.Message-box{
+    width:auto;
+    min-width: 300px;
+    background-color:#222;
+    
+    top:300px;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position:absolute;
+    height: auto;
+    color: azure;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+.Message-box h3{
+    font-size:large;
+    color: #b6f2c2;  
+
+}
+.Message-box h4{
+    font-size:large;
+    color: #f28353;  
+
+}
+
+.Message-box a{
+  margin: 20px;
+  color: #689cca;
 }
 

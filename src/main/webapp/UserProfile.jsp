@@ -132,6 +132,24 @@
       // Load the JDBC driver
       Class.forName("com.mysql.jdbc.Driver");
       
+      
+  	//Check login
+		Cookie[] cookies = request.getCookies();
+		String CheckEmail = null;
+      	if (cookies != null) {
+              // loop through the cookies and find the one with the name "myCookie"
+              for (Cookie cookie : cookies) {
+                  if (cookie.getName().equals("Email")) {
+                      // do something with the cookie's value
+                      CheckEmail = cookie.getValue();
+                  }
+                  
+              }
+          }
+      	if(CheckEmail == null) {
+      		response.sendRedirect("login.jsp");
+      	}
+      
 
       Cookie[] ck = request.getCookies();
       

@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +25,19 @@ public class Login extends HttpServlet {
 	String url = "jdbc:mysql://localhost:3306/ARS";
 	String user = "root";
 	String pwd = "root";
+	
+	static void close() throws SQLException, IOException {
+        if(result != null){
+            result.close();
+        }
+        if(pstat != null){
+            pstat.close();
+        }
+        if(con != null){
+            con.close();
+        }
+        
+    }
        
 	public void init() throws ServletException{
 		try {
@@ -93,7 +106,17 @@ public class Login extends HttpServlet {
 			   }
 		   } catch (Exception e) {
 			   e.printStackTrace();
+			   resp.sendRedirect("ErrorPage.html");
 			}
+		   finally{
+	            try {
+	                close();
+	            } catch (SQLException e) {
+	                e.printStackTrace();
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        }
 		
 	}
 

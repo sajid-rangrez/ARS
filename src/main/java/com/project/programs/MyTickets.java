@@ -143,15 +143,7 @@ public class MyTickets extends HttpServlet {
 			
 			e.printStackTrace();
 		}
-		finally{
-            try {
-                close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+		
 	}
 
 }

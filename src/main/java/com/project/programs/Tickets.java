@@ -354,15 +354,7 @@ public class Tickets extends HttpServlet {
 			System.out.println("Error in ticket creation");
 			e.printStackTrace();
 		}
-		finally{
-            try {
-                close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+		
 		
 		
 		

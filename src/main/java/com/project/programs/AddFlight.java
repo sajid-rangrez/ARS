@@ -183,15 +183,7 @@ public class AddFlight extends HttpServlet {
         	response.sendRedirect("ErrorPage.html");
             e.printStackTrace();
         }
-		finally{
-            try {
-                close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+	
 
 	} 
 		

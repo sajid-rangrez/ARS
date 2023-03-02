@@ -96,18 +96,18 @@ public class Login extends HttpServlet {
 
 //				   req.getRequestDispatcher("/HomePage.jsp").forward(req, resp);
 				   resp.sendRedirect("Home");
-				   System.out.println("Login Successfully");
+				   System.out.println("Login Successfully as: "+ result.getString(1));
 			   }
 			   else {
 				   out.println("Invalid Login Details. Try Again!");
+				   System.out.println("Invalid Login with email: "+ email);
 				   req.getRequestDispatcher("login.jsp").include(req, resp);
-				   System.out.println(email);
-				   System.out.println(password);
+				   
 			   }
 		   } catch (Exception e) {
 			   
 			   resp.sendRedirect("ErrorPage.html");
-			   e.printStackTrace();
+//			   e.printStackTrace();
 			}
 		   
 		

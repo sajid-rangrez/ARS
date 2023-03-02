@@ -105,18 +105,11 @@ public class Login extends HttpServlet {
 				   System.out.println(password);
 			   }
 		   } catch (Exception e) {
-			   e.printStackTrace();
+			   
 			   resp.sendRedirect("ErrorPage.html");
+			   e.printStackTrace();
 			}
-		   finally{
-	            try {
-	                close();
-	            } catch (SQLException e) {
-	                e.printStackTrace();
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-	        }
+		   
 		
 	}
 

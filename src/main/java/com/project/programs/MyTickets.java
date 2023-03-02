@@ -119,7 +119,7 @@ public class MyTickets extends HttpServlet {
 	      result = pstat.executeQuery(QUERY);
 	      
 	      	request.getRequestDispatcher("NavBar.jsp").include(request, response);
-	      	out.println("<div class=\"cbody\">");
+	      	out.println("<div class=\"tbody\">");
 			out.println("<h2>My Tickets</h2>");
 			
 	      while(result.next()){
@@ -131,6 +131,10 @@ public class MyTickets extends HttpServlet {
 	    	  To = result.getString(6);
 	    	  Id = result.getString(7);
 	    	  
+//	    	  if(n == 0) {
+//					out.printf("<div class=\"tagline\"><id  class=\"element\">Passenger</id> <from class=\"element\">Date</from> <to class=\"element\">Time</to> <departure class=\"element\">Seat No.</departure> <arival class=\"element\">Departure</arival> <price class=\"element\">Destination</price> <Action class=\"element\">Action</Action></div>");
+//				}
+//	    	  
 	    	  out.println(" <box> <form action=\"Ticket\" class=\"element\"> <input type=\"hidden\" name=\"Id\" value=\""+Id+"\">  <id  class=\"element\">"+result.getString(1)+"</id> <from class=\"element\">"+result.getString(2)+"</from> <to class=\"element\">"+result.getString(3)+"</to> <departure class=\"element\">"+result.getString(4)+"</departure> <arival class=\"element\">"+result.getString(5)+"</arival> <price class=\"element\">"+To+"</price> <button  type=\"submit\">View</button> </form> </box>");
 				n++;
 	    	  
@@ -138,6 +142,7 @@ public class MyTickets extends HttpServlet {
 	      if(n==0) {
 	    	  out.println("<h3>No Tickets Here!</h3>");
 	      }
+	      out.println("</div>");
 	      
 		} catch (SQLException e) {
 			

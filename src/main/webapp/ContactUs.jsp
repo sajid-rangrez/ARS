@@ -8,7 +8,7 @@
     <title>CONTACT US</title>
     <link rel="stylesheet" href="CssFiles/ContactUs.css">
     
-    <script src="https://kit.fontawesome.com/c89de0c309.js" ></script>
+   
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                     <label for="SUBJECT"><i class="fa-solid fa-file"></i> SUBJECT</label>
                 </div>
                 <div class="input-group">
-                    <TEXTAREA id="message" rows="8" required></TEXTAREA>
+                    <textarea id="message" rows="8" required></textarea>
                     <label for="message"><i class="fas fa-comments"></i> YOUR MESSAGE</label>
                 </div>
                 <button type="submit" id="submit">Contact Us <i class="fas fa-paper-plane"></i> </button>

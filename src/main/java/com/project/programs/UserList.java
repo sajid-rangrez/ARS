@@ -16,11 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MyTickets
+ * Servlet implementation class UserList
  */
-@WebServlet("/MyTickets")
-public class MyTickets extends HttpServlet {
-
+@WebServlet("/UserList")
+public class UserList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static Connection con = null;
@@ -41,21 +40,22 @@ public class MyTickets extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
- 
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Name = null;
 		String Email = null;
 		
 		
-		   String Id = null;  
-		   String Travler = null;  
+		   String Age = null;  
+		   String DOB = null;  
 		   
-		   String Seat = null;  
-		   String Date = null;  
-		   String Time = null;  
-		   String Flight = null;  
-		   String From = null;  
-		   String To = null;  
+		   String Mobile = null;  
+		   String Gender = null;  
+		   String Access = null; 
+		   String uAccess = null; 
+		   String uemail = null;  
+		   String uName = null;  
+		   
 		   int n = 0;
 		   
 		//Check login
@@ -71,9 +71,22 @@ public class MyTickets extends HttpServlet {
 		                  
 		              }
 		          }
+		      	if (cookies != null) {
+		      		// loop through the cookies and find the one with the name "myCookie"
+		      		for (Cookie cookie : cookies) {
+		      			if (cookie.getName().equals("Access")) {
+		      				// do something with the cookie's value
+		      				Access = cookie.getValue();
+		      			}
+		      			
+		      		}
+		      	}
 		      	if(CheckEmail == null) {
 		      		response.sendRedirect("login.jsp");
 		      	}
+		      	else if(!Access.equals("ADMIN")){
+        			response.sendRedirect("Home");
+        		}
 		      
 
 		      Cookie[] ck = request.getCookies();
@@ -100,7 +113,7 @@ public class MyTickets extends HttpServlet {
 		    PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
 			
-		String QUERY = "SELECT NAME, DATE, FLIGHT_TIME, SEAT, DEPARTURE, DESTINATION,ID FROM TICKETS WHERE Email = '"+Email+"' order by date desc";
+		String QUERY = "SELECT First_Name, Last_Name, DOB, Age, Mobile, Gender,email, Access FROM USER order by First_Name asc";
 		
 		try {
 			con = DriverManager.getConnection(url, user, pwd);
@@ -109,23 +122,23 @@ public class MyTickets extends HttpServlet {
 	      result = pstat.executeQuery(QUERY);
 	      
 	      	request.getRequestDispatcher("NavBar.jsp").include(request, response);
-	      	out.println("<div class=\"tbody\">");
-			out.println("<h2>My Tickets</h2>");
+	      	out.println("<div class=\"ubody\">");
+			out.println("<h2>Users</h2>");
 			
 	      while(result.next()){
-	    	  Travler = result.getString(1);
-	    	  Date = result.getString(2);
-	    	  Time = result.getString(3);
-	    	  Seat = result.getString(4);
-	    	  From = result.getString(5);
-	    	  To = result.getString(6);
-	    	  Id = result.getString(7);
+	    	  uName = result.getString(1) + " " + result.getString(2);
+	    	  DOB = result.getString(3);
+	    	  Age = result.getString(4);
+	    	  Mobile = result.getString(5);
+	    	  Gender = result.getString(6);
+	    	  uemail = result.getString(7);
+	    	  uAccess = result.getString(8);
 	    	  
 //	    	  if(n == 0) {
 //					out.printf("<div class=\"tagline\"><id  class=\"element\">Passenger</id> <from class=\"element\">Date</from> <to class=\"element\">Time</to> <departure class=\"element\">Seat No.</departure> <arival class=\"element\">Departure</arival> <price class=\"element\">Destination</price> <Action class=\"element\">Action</Action></div>");
 //				}
 //	    	  
-	    	  out.println(" <box> <form action=\"Ticket\" class=\"element\"> <input type=\"hidden\" name=\"Id\" value=\""+Id+"\">  <id  class=\"element\">"+result.getString(1)+"</id> <from class=\"element\">"+result.getString(2)+"</from> <to class=\"element\">"+result.getString(3)+"</to> <departure class=\"element\">"+result.getString(4)+"</departure> <arival class=\"element\">"+result.getString(5)+"</arival> <price class=\"element\">"+To+"</price> <button  type=\"submit\">View</button> </form> </box>");
+	    	  out.println(" <box> <form action=\"changeAccess\" method = \"post\" class=\"element\"> <input type=\"hidden\" name=\"uemail\" value=\""+uemail+"\"> <input type=\"hidden\" name=\"uAccess\" value=\""+uAccess+"\"> <id  class=\"element\">"+uName+"</id>   <departure class=\"element\">"+result.getString(4)+"</departure> <arival class=\"element\">"+result.getString(5)+"</arival> <from class=\"element\">"+result.getString(7)+"</from> <price class=\"element\">"+uAccess+"</price> <button  type=\"submit\">Change Access</button> </form> </box>");
 				n++;
 	    	  
 	      }
@@ -137,7 +150,7 @@ public class MyTickets extends HttpServlet {
 		} catch (SQLException e) {
 			
 //			e.printStackTrace();
-			System.out.println("MyTickets line 140");
+			System.out.println("UserList line 153");
 		}
 		
 	}

@@ -21,7 +21,7 @@
                 </div>
             </form>
             <div class ="side">
-                <img src="http://sciencestudent.in/wp-content/uploads/2022/12/airplane-6867678_960_720.jpg" alt="">
+                <img src="images/loginPage.jpg" alt="">
             </div>
 
         </div>

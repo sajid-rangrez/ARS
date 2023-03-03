@@ -67,15 +67,15 @@ public class Register extends HttpServlet {
 		
 		
 		
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
-		String email = request.getParameter("email");
-		String age = request.getParameter("age");
-		String phone = request.getParameter("phone");
-		String dob = request.getParameter("dob");
-		String password = request.getParameter("password");
-		String cpassword = request.getParameter("co-password");
-		String gender = request.getParameter("gender");
+		String fname = noSpace(request.getParameter("fname"));
+		String lname = noSpace(request.getParameter("lname"));
+		String email = noSpace(request.getParameter("email"));
+		String age = noSpace(request.getParameter("age"));
+		String phone = noSpace(request.getParameter("phone"));
+		String dob = noSpace(request.getParameter("dob"));
+		String password = noSpace(request.getParameter("password"));
+		String cpassword = noSpace(request.getParameter("co-password"));
+		String gender = noSpace(request.getParameter("gender"));
 	
 	
 		
@@ -138,5 +138,10 @@ public class Register extends HttpServlet {
 		}
 		
 	}
+	
+	private static String noSpace(String s){
+	      s = s.replaceAll(" ", "");
+	      return s;
+	    }
 
 }

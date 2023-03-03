@@ -5,7 +5,7 @@
 }
 body{
     background-color:#007399;
-    background-image: linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.6)), url(http://sciencestudent.in/wp-content/uploads/2022/12/airplane-g0ba3435a3_1920-1.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.6)), url(backimage.jpg);
 
   margin: 0;
 }
@@ -261,17 +261,17 @@ body{
   
   /* Search result list css*/
   
-  .cbody h2, .tbody h2{
+  .cbody h2, .tbody, .ubody h2{
     color: antiquewhite;
    
     text-align: center;
 }
-  .cbody h3, .tbody h3{
+  .cbody h3, .tbody, .ubody h3{
     color: orange;
    
     text-align: center;
 }
- .cbody h4, .tbody h4{
+ .cbody h4, .tbody, .ubody h4{
     color: antiquewhite;
    
     text-align: center;
@@ -310,7 +310,7 @@ body{
     
     
 }
-.cbody form,.tbody form{
+.cbody form,.tbody form, .ubody form{
 
     align-items: center;
     display: flex;
@@ -442,4 +442,23 @@ button{
        }
        .tbody box{
        margin-top: 20px;
+       }
+       
+  /* userList */
+  .ubody{
+    margin-top: 100px;
+    align-items: center;
+   color: #ff1500;
+   background-color: #222;
+   width: 90%;
+   height: 100%;
+   padding: 30px;
+   padding:10px 0px 30px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.63);
+  border:2px solid #4d4d4d;
+  
+  
        }

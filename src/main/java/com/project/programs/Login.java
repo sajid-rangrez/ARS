@@ -56,8 +56,8 @@ public class Login extends HttpServlet {
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
 		
-		String email = req.getParameter("email");
-		   String password = req.getParameter("password");
+		String email = noSpace(req.getParameter("email"));
+		   String password = noSpace(req.getParameter("password"));
 
 
 
@@ -112,5 +112,9 @@ public class Login extends HttpServlet {
 		   
 		
 	}
+	private static String noSpace(String s){
+	      s = s.replaceAll(" ", "");
+	      return s;
+	    }
 
 }

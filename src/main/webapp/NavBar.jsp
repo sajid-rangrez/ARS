@@ -61,7 +61,8 @@ if (ck != null) {
    
  	if(Access != null){
  		if(Access.equals("ADMIN")){
- 		   out.print("<a href=\"adminTools\">ADMIN Tools</a></li>");
+ 		   out.print("<a href=\"Schedule\">Add Flight</a></li>");
+ 		   out.print("<a href=\"UserList\">Users</a></li>");
  	   }
  	}
    

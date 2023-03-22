@@ -91,6 +91,7 @@ catch (Exception e) {
 }
 	
 %>
+       
     <div class="ticket">
         <div class="card card-left">
             <h1>AIR<span>TICKET</span></h1>
@@ -175,8 +176,10 @@ catch (Exception e) {
             </div>
 
         </div>
+        
     </div>
-   
+        <button style="margin-left: 50%;" type="button" class="button" onclick="window.print()">Print</button>
+
 </body>
 
 </html>

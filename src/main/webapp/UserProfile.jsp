@@ -235,10 +235,6 @@
 
            </div>
           
-           
-           
-           
-        </p>
         <form action="DeletCookie">
         <button type="submit" class="button"  ><div class="lable">Log out</div></button>
         </form>
